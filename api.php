@@ -1,20 +1,20 @@
 <?php
-    require "config.php";
-
-    $conn = mysqli_connect($HOST, $USER, $PASS, $DB);
 
     class Accounts {
-
-        var $hash;
         var $query;
 
-        function verifyData($user, $pass)
+        function sayHi()
         {
-            $user = mysql_real_escape_string(stripslashes($user));
-            $pass = mysql_real_escape_string(stripslashes($pass));
-            $this->hash = hash($ALGO, $SALT.$pass);
+          echo "Hello";
+        }
+
+        function verifyData($user, $pass, $con, $ALGO, $SALT)
+        {
+            #$user = mysql_real_escape_string(stripslashes($user));
+            #$pass = mysql_real_escape_string(stripslashes($pass));
+            $hash = hash($ALGO, $SALT.$pass);
             $this->query = "SELECT * FROM login WHERE user='{$user}' AND pass='{$hash}'";
-            $resp = mysqli_query($conn, $this->query) or die("Unable to send query");
+            $resp = mysqli_query($con, $this->query) or die("Unable to send query");
             $count = mysqli_num_rows($resp);
             if($count>0)
             {
@@ -64,7 +64,4 @@
         }
     }
 
-    class Classifier {
-
-    }
 ?>
