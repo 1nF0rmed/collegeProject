@@ -11,7 +11,7 @@
         header("Location: ./competition/index.php");
       }
 
-    } # testing script will be up
+    } # testing script 
     if($_SERVER["REQUEST_METHOD"]=="POST")
     { echo "POSTING";
       $conn = mysqli_connect($HOST, $USER, $PASS, $DB) or die("Na...");

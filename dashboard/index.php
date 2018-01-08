@@ -9,9 +9,16 @@
     }
     if($_SERVER["REQUEST_METHOD"]=="POST")
     {
-      echo $_POST["start_date"];
-      echo "<br/>";
-      echo $_POST["duration"];
+      $file = "opts.cfg";
+      $time = new DateTime($_POST["start_date"]);
+      $duration = $_POST["duration"];
+
+      $time->add(new DateInterval('PT'.$duration.'M'));
+
+      $time = $time->format('Y-m-d\TH:i');
+
+      file_put_contents($file, $time);
+
     }
 
 ?>
@@ -26,6 +33,7 @@
     <form action="" method="POST">
       Date and Time: <input type="datetime-local" name="start_date">
       Duration: <input type="number" name="duration" min="30" max="3600">
+      <input type="submit" name="" value="SUBMIT">
     </form>
   </body>
 </html>
