@@ -48,7 +48,7 @@
         echo "Start Time: ".$arr[1]."<br>";
         echo "End Date: ".$arr[2]."<br>";
         echo "End Time: ".$arr[3]."<br>";
-        echo "Duration: ".$arr[4]."<br>";
+        echo "Duration: ".$arr[4]."min<br>";
       }
     ?>
     <form action="" method="POST">
