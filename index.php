@@ -29,8 +29,10 @@
           if($user=="admin")
           {
             header("Location: http://localhost/dashboard");
+          } else {
+            header("Location: http://localhost/competition/");
           }
-          header("Location: http://localhost/competition/");
+
         }
         else {
           echo "Wrong Password";
