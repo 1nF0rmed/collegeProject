@@ -10,7 +10,7 @@
         #header("Location: ./dashboard/index.php");
       } else {
         echo "no";
-        header("Location: ./competition/index.php");
+        # header("Location: ./competition/index.php");
       }
 
     } # testing script
