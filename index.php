@@ -6,9 +6,9 @@
     {
       if($_SESSION["user"]=="admin")
       {
-        header("Location: http://localhost/dashboard");
+        header("Location: ./dashboard/index.php");
       }
-      header("Location: http://localhost/competition/");
+      header("Location: ./competition/index.php");
     } # testing script will be up
     if($_SERVER["REQUEST_METHOD"]=="POST")
     { echo "POSTING";
