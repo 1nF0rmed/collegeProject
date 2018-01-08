@@ -4,13 +4,12 @@
     session_start();
     if(isset($_SESSION["user"]))
     {
-      echo $_SESSION["user"];
       if($_SESSION["user"]=="admin")
-      { echo "yeah";
-        #header("Location: ./dashboard/index.php");
+      {
+        header("Location: ./dashboard/index.php");
       } else {
-        echo "no";
-        # header("Location: ./competition/index.php");
+
+        header("Location: ./competition/index.php");
       }
 
     } # testing script
