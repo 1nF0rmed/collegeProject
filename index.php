@@ -4,14 +4,16 @@
     session_start();
     if(isset($_SESSION["user"]))
     {
+      echo $_SESSION["user"];
       if($_SESSION["user"]=="admin")
-      {
-        header("Location: ./dashboard/index.php");
+      { echo "yeah";
+        #header("Location: ./dashboard/index.php");
       } else {
+        echo "no";
         header("Location: ./competition/index.php");
       }
 
-    } # testing script 
+    } # testing script
     if($_SERVER["REQUEST_METHOD"]=="POST")
     { echo "POSTING";
       $conn = mysqli_connect($HOST, $USER, $PASS, $DB) or die("Na...");
