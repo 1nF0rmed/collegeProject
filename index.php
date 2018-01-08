@@ -7,8 +7,10 @@
       if($_SESSION["user"]=="admin")
       {
         header("Location: ./dashboard/index.php");
+      } else {
+        header("Location: ./competition/index.php");
       }
-      header("Location: ./competition/index.php");
+
     } # testing script will be up
     if($_SERVER["REQUEST_METHOD"]=="POST")
     { echo "POSTING";
