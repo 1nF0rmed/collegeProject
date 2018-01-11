@@ -40,6 +40,9 @@
         echo "End Date: ".$arr[2]."<br>";
         echo "End Time: ".$arr[3]."<br>";
         echo "Duration: ".$arr[4]."min<br>";
+
+        $object = new Competition();
+        echo "Start Date: ".$object->getStartDate("opts.cfg")."<br>";
       }
     ?>
     <form action="" method="POST">
