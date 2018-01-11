@@ -1,4 +1,5 @@
 <?php
+    ini_set('display_errors', 1);
     require 'api.php';
     require 'config.php';
     session_start();
