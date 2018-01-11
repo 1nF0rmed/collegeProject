@@ -82,6 +82,13 @@
 
         file_put_contents($file, $content);
       }
+
+      function getStartTime($file)
+      {
+        $cfg = file_get_contents($file);
+        $arr = preg_split("/T/", $cfg);
+        echo "Start Date: ".$arr[0]."<br>";
+      }
     }
 
 ?>
