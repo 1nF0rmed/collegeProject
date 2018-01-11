@@ -87,7 +87,7 @@
       {
         $cfg = file_get_contents($file);
         $arr = preg_split("/T/", $cfg);
-        return $arr[0].;
+        return $arr[0];
       }
 
       function getStartTime($file)
