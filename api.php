@@ -64,4 +64,24 @@
         }
     }
 
+    class Competition
+    {
+      function setTime($file)
+      {
+        $time_start = new DateTime($_POST["start_date"]);
+        $duration = $_POST["duration"];
+
+        $time_end = new DateTime($_POST["start_date"]);
+
+        $time_end->add(new DateInterval('PT'.$duration.'M'));
+
+        $time_start = $time_start->format('Y-m-d\TH:i');
+        $time_end = $time_end->format('Y-m-d\TH:i');
+
+        $content = $time_start."T".$time_end."T".strval($duration);
+
+        file_put_contents($file, $content);
+      }
+    }
+
 ?>
