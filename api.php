@@ -83,11 +83,39 @@
         file_put_contents($file, $content);
       }
 
+      function getStartDate($file)
+      {
+        $cfg = file_get_contents($file);
+        $arr = preg_split("/T/", $cfg);
+        return $arr[0].;
+      }
+
       function getStartTime($file)
       {
         $cfg = file_get_contents($file);
         $arr = preg_split("/T/", $cfg);
-        echo "Start Date: ".$arr[0]."<br>";
+        return $arr[1];
+      }
+
+      function getEndDate($file)
+      {
+        $cfg = file_get_contents($file);
+        $arr = preg_split("/T/", $cfg);
+        return $arr[2];
+      }
+
+      function getEndTime($file)
+      {
+        $cfg = file_get_contents($file);
+        $arr = preg_split("/T/", $cfg);
+        return $arr[3];
+      }
+
+      function getDuration($file)
+      {
+        $cfg = file_get_contents($file);
+        $arr = preg_split("/T/", $cfg);
+        return $arr[4];
       }
     }
 
