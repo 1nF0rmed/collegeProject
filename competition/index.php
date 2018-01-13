@@ -18,3 +18,8 @@
     echo $pass;
 
 ?>
+
+<form action="" method="POST">
+    <input type="hidden" name="logout" value="0">
+    <input type="submit" value="LOGOUT">
+</form>
