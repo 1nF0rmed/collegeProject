@@ -123,6 +123,8 @@
           $startTime = new DateTime($object->getStartDate($file).$object->getStartTime($file));
           $endTime = new DateTime($object->getEndDate($file).$object->getEndTime($file));
 
+          echo $startTime;
+
           $interval = $startTime->diff($endTime);
 
           return $interval;
