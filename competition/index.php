@@ -10,6 +10,14 @@
       header("Location: http://localhost/");
     }
 
+    if($_SERVER["REQUEST_METHOD"]=="POST")
+    {
+        if($_POST["logout"])
+        {
+           session_destroy()''
+        }
+    }
+
     $object = new Competition();
     $interval = $object->getTTS("../dashboard/opts.cfg");
 
