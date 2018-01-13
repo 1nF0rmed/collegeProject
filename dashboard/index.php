@@ -15,7 +15,7 @@
       $file = "opts.cfg";
 
       $object = new Competition();
-      $objects->setTime($file);
+      $object->setTime($file);
 
     }
 
