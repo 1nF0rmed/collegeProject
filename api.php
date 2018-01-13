@@ -119,8 +119,9 @@
       }
       function getTTS($file)
       {
-          $startTime = new DateTime(getStartDate($file).getStartTime($file));
-          $endTime = new DateTime(getEndDate($file).getEndTime($file));
+          $object = new Competition();
+          $startTime = new DateTime($object->getStartDate($file).$object->getStartTime($file));
+          $endTime = new DateTime($object->getEndDate($file).$object->getEndTime($file));
 
           $interval = $startTime->diff($endTime);
 
