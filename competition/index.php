@@ -26,9 +26,9 @@
     $pass = $interval->format("%R");
     if( $pass=="-" )
     {
-      echo "Under Construction";
+      echo "<br>Under Construction";
     } else {
-      echo $interval->format("%a days: %H hours: %i minutes left");
+      echo "<br>".$interval->format("%a days: %H hours: %i minutes left");
     }
 
     echo $pass;
