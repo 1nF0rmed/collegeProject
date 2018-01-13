@@ -117,6 +117,13 @@
         $arr = preg_split("/T/", $cfg);
         return $arr[4];
       }
+      function getTTS($file)
+      {
+          $startTime = new DateTime(getStartDate($file).getStartTime($file));
+          $endTime = new DateTime(getEndDate($file).getEndTime($file));
+
+
+      }
     }
 
 ?>
