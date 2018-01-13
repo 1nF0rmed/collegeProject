@@ -54,6 +54,7 @@
     <form action="" method="POST">
       Date and Time: <input type="datetime-local" name="start_date">
       Duration: <input type="number" name="duration" min="30" max="3600">
+      <input type="hidden" name="logout" value="1">
       <input type="submit" name="" value="SUBMIT">
     </form>
   <form action="" method="POST">
