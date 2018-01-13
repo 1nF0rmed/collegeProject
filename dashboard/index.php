@@ -12,17 +12,16 @@
     }
     if($_SERVER["REQUEST_METHOD"]=="POST")
     {
-      $file = "opts.cfg";
-
-      $object = new Competition();
-      $object->setTime($file);
-
       if($_POST["logout"]=="0")
       {
         unset($_SESSION["user"]);
          session_destroy();
          header("Location: ../");
       }
+      $file = "opts.cfg";
+
+      $object = new Competition();
+      $object->setTime($file);
 
     }
 
@@ -57,7 +56,7 @@
       Duration: <input type="number" name="duration" min="30" max="3600">
       <input type="submit" name="" value="SUBMIT">
     </form>
-    <form action="" method="POST">
+  <form action="" method="POST">
     <input type="hidden" name="logout" value="0">
     <input type="submit" value="LOGOUT">
 </form>
