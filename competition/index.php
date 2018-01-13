@@ -23,7 +23,13 @@
     $object = new Competition();
     $interval = $object->getTTS("../dashboard/opts.cfg");
 
-    $pass = $interval->format("%R%a:%H:%i");
+    $pass = $interval->format("%R");
+    if( $pass=="-" )
+    {
+      echo "Under Construction";
+    } else {
+      echo $interval->format("%H hours: %i minutes left");
+    }
 
     echo $pass;
 
