@@ -7,14 +7,14 @@
       echo "Hello, ";
       echo $_SESSION["user"];
     } else {
-      header("Location: http://localhost/");
+      header("Location: ../");
     }
 
     if($_SERVER["REQUEST_METHOD"]=="POST")
     {
         if($_POST["logout"])
         {
-           session_destroy()''
+           session_destroy();
         }
     }
 
