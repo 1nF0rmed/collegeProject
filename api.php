@@ -121,11 +121,10 @@
       {
           $object = new Competition();
           $startTime = new DateTime($object->getStartDate($file).$object->getStartTime($file));
-          $endTime = new DateTime($object->getEndDate($file).$object->getEndTime($file));
+          #$endTime = new DateTime($object->getEndDate($file).$object->getEndTime($file));
+          $curTime = $date = date('m/d/Y h:i:s ', time());
 
-          echo $startTime->format("m/d/Y h:i:s");
-
-          $interval = $startTime->diff($endTime);
+          $interval = $startTime->diff($curTime);
 
           return $interval;
       }
