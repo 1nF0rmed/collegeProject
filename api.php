@@ -122,7 +122,9 @@
           $startTime = new DateTime(getStartDate($file).getStartTime($file));
           $endTime = new DateTime(getEndDate($file).getEndTime($file));
 
+          $interval = $startTime->diff($endTime);
 
+          return $interval;
       }
     }
 
