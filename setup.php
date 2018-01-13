@@ -1,10 +1,10 @@
 <?php
   require "config.php";
 
-  # $query = file_get_contents("createDB.sql");
-  # $con = mysqli_connect($HOST, $USER, $PASS) or die("Unable to connect");
+  $query = file_get_contents("createDB.sql");
+  $con = mysqli_connect($HOST, $USER, $PASS) or die("Unable to connect");
 
-  # $resp = mysqli_query($con, $query) or die("Unable to send query");
+  $resp = mysqli_query($con, $query) or die("Unable to send query");
 
   $con = mysqli_connect($HOST, $USER, $PASS, $DB);
   $query = file_get_contents("createTables.sql");
