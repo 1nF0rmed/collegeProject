@@ -57,5 +57,9 @@
       Duration: <input type="number" name="duration" min="30" max="3600">
       <input type="submit" name="" value="SUBMIT">
     </form>
+    <form action="" method="POST">
+    <input type="hidden" name="logout" value="0">
+    <input type="submit" value="LOGOUT">
+</form>
   </body>
 </html>
