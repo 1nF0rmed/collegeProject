@@ -10,8 +10,8 @@
 
         function verifyData($user, $pass, $con, $ALGO, $SALT)
         {
-            $user = mysql_real_escape_string(stripslashes($user));
-            $pass = mysql_real_escape_string(stripslashes($pass));
+            $user = mysqli_real_escape_string(stripslashes($user));
+            $pass = mysqli_real_escape_string(stripslashes($pass));
             $hash = hash($ALGO, $SALT.$pass);
             $this->query = "SELECT * FROM login WHERE user='{$user}' AND pass='{$hash}'";
             $resp = mysqli_query($con, $this->query) or die("Unable to send query");
