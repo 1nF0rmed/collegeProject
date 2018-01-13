@@ -124,7 +124,7 @@
           #$endTime = new DateTime($object->getEndDate($file).$object->getEndTime($file));
           $curTime = new DateTime(date('m/d/Y h:i:s ', time()));
 
-          $interval = $startTime->diff($curTime);
+          $interval = $curTime->diff($startTime);
 
           return $interval;
       }
