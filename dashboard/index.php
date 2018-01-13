@@ -17,6 +17,13 @@
       $object = new Competition();
       $object->setTime($file);
 
+      if($_POST["logout"]=="0")
+      {
+        unset($_SESSION["user"]);
+         session_destroy();
+         header("Location: ../");
+      }
+
     }
 
 ?>
