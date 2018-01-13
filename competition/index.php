@@ -12,7 +12,7 @@
 
     if($_SERVER["REQUEST_METHOD"]=="POST")
     {
-        if($_POST["logout"])
+        if($_POST["logout"]=="0")
         {
           unset($_SESSION["user"]);
            session_destroy();
