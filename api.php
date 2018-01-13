@@ -123,7 +123,7 @@
           $startTime = new DateTime($object->getStartDate($file).$object->getStartTime($file));
           $endTime = new DateTime($object->getEndDate($file).$object->getEndTime($file));
 
-          echo $startTime;
+          echo $startTime->format("m/d/Y h:i:s");
 
           $interval = $startTime->diff($endTime);
 
