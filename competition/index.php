@@ -28,7 +28,7 @@
     {
       echo "Under Construction";
     } else {
-      echo $interval->format("%H hours: %i minutes left");
+      echo $interval->format("%a days: %H hours: %i minutes left");
     }
 
     echo $pass;
