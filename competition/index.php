@@ -15,4 +15,6 @@
 
     $pass = $interval->format("%R");
 
+    echo $pass;
+
 ?>
