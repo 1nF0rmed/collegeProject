@@ -13,6 +13,6 @@
     $object = new Competition();
     $interval = $object->getTTS("../dashboard/opts.cfg");
 
-    echo "<br>".$interval->format("%R%a days");
+    echo "<br>".$interval->format("%R%a %H:%i:%S days");
 
 ?>
