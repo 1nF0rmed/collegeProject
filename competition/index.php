@@ -13,7 +13,7 @@
     $object = new Competition();
     $interval = $object->getTTS("../dashboard/opts.cfg");
 
-    $pass = $interval->format("%R");
+    $pass = $interval->format("%R%i");
 
     echo $pass;
 
