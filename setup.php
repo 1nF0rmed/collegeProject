@@ -16,5 +16,6 @@
   //Setting up the Database for questions
   $query = file_get_contents("createQDB.sql");
   $con = mysqli_connect($HOST, $USER, $PASS) or die("Unable to connect");
+  $resp = mysqli_query($con, $query) or die("Unable to create QDB");
   mysqli_close($con);
  ?>
