@@ -87,51 +87,51 @@
 
         $content = $time_start."T".$time_end."T".strval($duration);
 
-        file_put_contents($this->$file, $content);
+        file_put_contents($this->file, $content);
       }
 
       function getStartDate()
       {
-        $cfg = file_get_contents($this->$file);
+        $cfg = file_get_contents($this->file);
         $arr = preg_split("/T/", $cfg);
         return $arr[0];
       }
 
       function getStartTime()
       {
-        $cfg = file_get_contents($this->$file);
+        $cfg = file_get_contents($this->file);
         $arr = preg_split("/T/", $cfg);
         return $arr[1];
       }
 
       function getEndDate()
       {
-        $cfg = file_get_contents($this->$file);
+        $cfg = file_get_contents($this->file);
         $arr = preg_split("/T/", $cfg);
         return $arr[2];
       }
 
       function getEndTime()
       {
-        $cfg = file_get_contents($this->$file);
+        $cfg = file_get_contents($this->file);
         $arr = preg_split("/T/", $cfg);
         return $arr[3];
       }
 
       function getDuration()
       {
-        $cfg = file_get_contents($this->$file);
+        $cfg = file_get_contents($this->file);
         $arr = preg_split("/T/", $cfg);
         return $arr[4];
       }
       function getTTS()
       {
           $object = new Competition();
-          $startTime = new DateTime($object->getStartDate($this->$file).$object->getStartTime($this->$file));
+          $startTime = new DateTime($object->getStartDate($this->file).$object->getStartTime($this->$file));
           #$endTime = new DateTime($object->getEndDate($file).$object->getEndTime($file));
           $curTime = new DateTime(date('m/d/Y h:i:s ', time()));
 
-          $interval = $curTime->diff($startTime);
+          $interval = $curTime->diff(startTime);
 
           return $interval;
       }
