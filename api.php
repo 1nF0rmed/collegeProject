@@ -31,7 +31,7 @@
             $resp = mysqli_query($conn, $this->query) or die("Unable to send query");
             if( mysqli_num_rows($resp)>0 ) {
                 $total = mysqli_fetch_assoc($rep)["total"];
-                return $total;$user
+                return $total;
             }
             return -1;
         }
@@ -113,9 +113,6 @@
 
       function getEndTime()
       {
-      function getStartTime()
-      {
-        $cfg = file_get_contents($t
         $cfg = file_get_contents($this->file);
         $arr = preg_split("/T/", $cfg);
         return $arr[3];
@@ -127,13 +124,10 @@
         $arr = preg_split("/T/", $cfg);
         return $arr[4];
       }
-
-      function getStartTime()
-      {
-        $cfg = file_get_contents($ttTTS()
+      function getTTS()
       {
           $object = new Competition();
-          $startTime = new DateTime($object->getStartDate($this->file).$object->getStartTime($this->$file));
+          $startTime = new DateTime($object->getStartDate($this->$file).$object->getStartTime($this->$file));
           #$endTime = new DateTime($object->getEndDate($file).$object->getEndTime($file));
           $curTime = new DateTime(date('m/d/Y h:i:s ', time()));
 
