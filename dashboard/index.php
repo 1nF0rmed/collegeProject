@@ -32,7 +32,7 @@
   <head>
     <meta charset="utf-8">
     <title>Dashboard</title>
-  </head> and strong nesting is important, as is the ability
+  </head> 
   <body>
 
     <?php

@@ -17,7 +17,7 @@
             $resp = mysqli_query($con, $this->query) or die("Unable to send query");
             $count = mysqli_num_rows($resp);
             if($count>0)
-            {
+            { 
                 return 1;
             } else {
                 return -1;
