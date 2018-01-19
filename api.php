@@ -8,7 +8,7 @@
           echo "Hello";
         }
 
-        function verifyData($user, $pass, $con, $ALGO, $SALT)
+        function verifyData($user, $pass, $con, $ALGO, $SALT) # To verify the users data
         {
             $user = mysqli_real_escape_string($con, stripslashes($user));
             $pass = mysqli_real_escape_string($con, stripslashes($pass));

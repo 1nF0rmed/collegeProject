@@ -38,7 +38,7 @@
     <?php
       if(file_exists("opts.cfg"))
       {
-        $object = new Competition();
+        $object = new Competition("opts.cfg");
         $cfg = file_get_contents("opts.cfg");
         $arr = preg_split("/T/", $cfg);
         echo "<h2>Current Competition Time Setting: </h2>";
