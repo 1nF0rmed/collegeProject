@@ -38,6 +38,7 @@
     <?php
       if(file_exists("opts.cfg"))
       {
+        $object = new Competition();
         $cfg = file_get_contents("opts.cfg");
         $arr = preg_split("/T/", $cfg);
         echo "<h2>Current Competition Time Setting: </h2>";
@@ -48,7 +49,6 @@
         echo "Duration: ".$arr[4]."min<br>";
 
         $object = new Competition();
-        echo "Start Date: ".$object->getStartDate("opts.cfg")."<br>";
       }
     ?>
     <form action="" method="POST">
