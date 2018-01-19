@@ -26,12 +26,12 @@
 
         function getTotal($user)
         {
-            $user = mysql_real_escape_string(stripslashes($user));
+            $user = mysql_real_escape_string(stripslashes($userql_real_escape_stri));
             $this->query = "SELECT total FROM marks WHERE user='{$user}'";
             $resp = mysqli_query($conn, $this->query) or die("Unable to send query");
             if( mysqli_num_rows($resp)>0 ) {
                 $total = mysqli_fetch_assoc($rep)["total"];
-                return $total;
+                return $total;$user
             }
             return -1;
         }
