@@ -113,6 +113,9 @@
 
       function getEndTime()
       {
+      function getStartTime()
+      {
+        $cfg = file_get_contents($t
         $cfg = file_get_contents($this->file);
         $arr = preg_split("/T/", $cfg);
         return $arr[3];
@@ -124,7 +127,10 @@
         $arr = preg_split("/T/", $cfg);
         return $arr[4];
       }
-      function getTTS()
+      function ge
+      function getStartTime()
+      {
+        $cfg = file_get_contents($ttTTS()
       {
           $object = new Competition();
           $startTime = new DateTime($object->getStartDate($this->file).$object->getStartTime($this->$file));
