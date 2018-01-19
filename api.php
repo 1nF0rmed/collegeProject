@@ -70,7 +70,7 @@
 
       function __construct($name)
       {
-        $this->$file = $name;
+        $this->file = $name;
       }
 
       function setTime()
