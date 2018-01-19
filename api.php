@@ -26,7 +26,7 @@
 
         function getTotal($user)
         {
-            $user = mysql_real_escape_string(stripslashes($userql_real_escape_stri));
+            $user = mysql_real_escape_string(stripslashes($user));
             $this->query = "SELECT total FROM marks WHERE user='{$user}'";
             $resp = mysqli_query($conn, $this->query) or die("Unable to send query");
             if( mysqli_num_rows($resp)>0 ) {
@@ -127,7 +127,7 @@
         $arr = preg_split("/T/", $cfg);
         return $arr[4];
       }
-      function ge
+
       function getStartTime()
       {
         $cfg = file_get_contents($ttTTS()
