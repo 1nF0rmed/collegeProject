@@ -32,7 +32,7 @@
   <head>
     <meta charset="utf-8">
     <title>Dashboard</title>
-  </head>
+  </head> and strong nesting is important, as is the ability
   <body>
 
     <?php
@@ -54,6 +54,9 @@
       Duration: <input type="number" name="duration" min="30" max="3600">
       <input type="hidden" name="logout" value="1">
       <input type="submit" name="" value="SUBMIT">
+    </form>
+    <form class="" action="" method="POST">
+
     </form>
   <form action="" method="POST">
     <input type="hidden" name="logout" value="0">
