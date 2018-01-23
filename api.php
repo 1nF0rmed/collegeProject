@@ -106,7 +106,7 @@
       function getEndDate()
       {
         $cfg = file_get_contents($this->file);
-        $arr = preg_split("/T/", $cfg);
+        $arr = preg_split("/T/", $cfg); 
         return $arr[2];
       }
 

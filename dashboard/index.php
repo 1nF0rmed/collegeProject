@@ -49,7 +49,7 @@
         echo "End Time: ".$arr[3]."<br>";
         echo "Duration: ".$arr[4]."min<br>";
 
-        $object = new Competition();
+        $object = new Competition("opts.cfg");
         echo "Start Date: ".$object->getStartDate("opts.cfg")."<br>";
       }
     ?>
