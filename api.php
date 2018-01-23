@@ -112,7 +112,7 @@
 
       function getEndTime()
       {
-        $cfg = file_get_contents($this->file);
+        $cfg = file_get_contents($this->file); 
         $arr = preg_split("/T/", $cfg);
         return $arr[3];
       }
