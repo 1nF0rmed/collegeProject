@@ -68,7 +68,7 @@
     {
       var $file;
 
-      function __constructor($name)
+      function __construct($name)
       {
           $this->file = $name;
       }
