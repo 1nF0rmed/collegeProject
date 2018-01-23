@@ -31,7 +31,6 @@
       echo "<br>".$interval->format("%a days: %H hours: %i minutes left");
     }
 
-    echo $pass;
 
 ?>
 

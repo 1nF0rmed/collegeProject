@@ -3,12 +3,12 @@
     class Accounts {
         var $query;
 
-        function sayHi() # dummy function
+        function sayHi()
         {
           echo "Hello";
         }
 
-        function verifyData($user, $pass, $con, $ALGO, $SALT) # To verify the users data
+        function verifyData($user, $pass, $con, $ALGO, $SALT)
         {
             $user = mysqli_real_escape_string($con, stripslashes($user));
             $pass = mysqli_real_escape_string($con, stripslashes($pass));
@@ -66,14 +66,7 @@
 
   class Competition
     {
-      var $file;
-
-      function __construct($name)
-      {
-        $this->file = $name;
-      }
-
-      function setTime()
+      function setTime($file)
       {
         $time_start = new DateTime($_POST["start_date"]);
         $duration = $_POST["duration"];
@@ -87,51 +80,51 @@
 
         $content = $time_start."T".$time_end."T".strval($duration);
 
-        file_put_contents($this->file, $content);
+        file_put_contents($file, $content);
       }
 
-      function getStartDate()
+      function getStartDate($file)
       {
-        $cfg = file_get_contents($this->file);
+        $cfg = file_get_contents($file);
         $arr = preg_split("/T/", $cfg);
         return $arr[0];
       }
 
-      function getStartTime()
+      function getStartTime($file)
       {
-        $cfg = file_get_contents($this->file);
+        $cfg = file_get_contents($file);
         $arr = preg_split("/T/", $cfg);
         return $arr[1];
       }
 
-      function getEndDate()
+      function getEndDate($file)
       {
-        $cfg = file_get_contents($this->file);
+        $cfg = file_get_contents($file);
         $arr = preg_split("/T/", $cfg);
         return $arr[2];
       }
 
-      function getEndTime()
+      function getEndTime($file)
       {
-        $cfg = file_get_contents($this->file);
+        $cfg = file_get_contents($file);
         $arr = preg_split("/T/", $cfg);
         return $arr[3];
       }
 
-      function getDuration()
+      function getDuration($file)
       {
-        $cfg = file_get_contents($this->file);
+        $cfg = file_get_contents($file);
         $arr = preg_split("/T/", $cfg);
         return $arr[4];
       }
-      function getTTS()
+      function getTTS($file)
       {
           $object = new Competition();
-          $startTime = new DateTime($object->getStartDate($this->file).$object->getStartTime($this->file));
+          $startTime = new DateTime($object->getStartDate($file).$object->getStartTime($file));
           #$endTime = new DateTime($object->getEndDate($file).$object->getEndTime($file));
           $curTime = new DateTime(date('m/d/Y h:i:s ', time()));
 
-          $interval = $curTime->diff(startTime);
+          $interval = $curTime->diff($startTime);
 
           return $interval;
       }
