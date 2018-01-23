@@ -66,7 +66,13 @@
 
   class Competition
     {
-      function setTime($file)
+      var $file;
+
+      function _constructor($name)
+      {
+          $this->file = $name;
+      }
+      function setTime()
       {
         $time_start = new DateTime($_POST["start_date"]);
         $duration = $_POST["duration"];
@@ -80,47 +86,47 @@
 
         $content = $time_start."T".$time_end."T".strval($duration);
 
-        file_put_contents($file, $content);
+        file_put_contents($this->file, $content);
       }
 
-      function getStartDate($file)
+      function getStartDate()
       {
-        $cfg = file_get_contents($file);
+        $cfg = file_get_contents($this->file);
         $arr = preg_split("/T/", $cfg);
         return $arr[0];
       }
 
-      function getStartTime($file)
+      function getStartTime()
       {
-        $cfg = file_get_contents($file);
+        $cfg = file_get_contents($this->file);
         $arr = preg_split("/T/", $cfg);
         return $arr[1];
       }
 
-      function getEndDate($file)
+      function getEndDate()
       {
-        $cfg = file_get_contents($file);
+        $cfg = file_get_contents($this->file);
         $arr = preg_split("/T/", $cfg);
         return $arr[2];
       }
 
-      function getEndTime($file)
+      function getEndTime()
       {
-        $cfg = file_get_contents($file);
+        $cfg = file_get_contents($this->thifile);
         $arr = preg_split("/T/", $cfg);
         return $arr[3];
       }
 
-      function getDuration($file)
+      function getDuration()
       {
-        $cfg = file_get_contents($file);
+        $cfg = file_get_contents($this->file);
         $arr = preg_split("/T/", $cfg);
         return $arr[4];
       }
-      function getTTS($file)
+      function getTTS()
       {
           $object = new Competition();
-          $startTime = new DateTime($object->getStartDate($file).$object->getStartTime($file));
+          $startTime = new DateTime($object->getStartDate($file).$object->getStartTime($this->file));
           #$endTime = new DateTime($object->getEndDate($file).$object->getEndTime($file));
           $curTime = new DateTime(date('m/d/Y h:i:s ', time()));
 
