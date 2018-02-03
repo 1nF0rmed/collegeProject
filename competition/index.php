@@ -1,3 +1,11 @@
+<html>
+	<head>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css" rel="stylesheet" />
+		
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+		<script src="../jquery-3.2.1.min.js"></script>
+		<title>User's page</title>
+	</head>
 <?php
     require "../api.php";
 
@@ -19,22 +27,39 @@
            header("Location: ../");
         }
     }
-
-    $object = new Competition();
-    $interval = $object->getTTS("../dashboard/opts.cfg");
+/*
+    $object = new Competition("../dashboard/opts.cfg");
+    $interval = $object->getTTS();
 
     $pass = $interval->format("%R");
     if( $pass=="-" )
     {
-      echo "<br>Under Construction";
+      echo "<br><h3>Competition started already/ended.</h3>";
     } else {
       echo "<br>".$interval->format("%a days: %H hours: %i minutes left");
     }
 
-
+*/
 ?>
+	<span id="time"></span>
+	<form action="" method="POST">
+    		<input type="hidden" name="logout" value="0">
+    		<input type="submit" value="LOGOUT" class="waves-effect waves-light btn">
+	</form>
 
-<form action="" method="POST">
-    <input type="hidden" name="logout" value="0">
-    <input type="submit" value="LOGOUT">
-</form>
+	<script>
+		$(document).ready(function(){
+			setInterval(function(){
+				$("#time").load("checkTime.php");
+				if($("#time").text() == "0")
+				{
+					window.location.replace("question.php");
+				}
+			}, 500);
+			
+		});
+	</script>
+	
+	</body>
+
+</html>

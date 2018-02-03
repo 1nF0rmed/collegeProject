@@ -43,13 +43,29 @@
 
 <html>
   <head>
+    	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">	
+  	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
     <title>login page</title>
+	<style>
+		.container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	</style>
   </head>
-  <body bgcolor="pink">
-    <form action="." method="POST">
-      Username:<input type="text" name="user"/> <br/>
-      Password:<input type="password" name="pass"/> <br/>
-    <input type="submit" value="LOGIN"/>
+  <body>
+  <div class="container">
+   <div class="row">
+   <div class="col s6 offset-s3 z-depth-1" id="panell" style="max-width:100%;margin-top:100px">
+    	<h5>Login</h5>
+	<form action="." method="POST">
+      <input type="text" name="user" placeholder="Username" for="username" />
+      <input type="password" name="pass" placeholder="Password" for="password"/> <br/>
+    <input type="submit" class="waves-effect waves-light btn" value="LOGIN"/>
     </form>
+  </div>
+ </div>
+</div>
   </body>
 </html>

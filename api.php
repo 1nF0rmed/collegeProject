@@ -125,10 +125,12 @@
       }
       function getTTS()
       {
-          $object = new Competition();
-          $startTime = new DateTime($object->getStartDate($file).$object->getStartTime($this->file));
+          $object = new Competition($this->file);
+          $startTime = new DateTime($object->getStartDate($this->file).$object->getStartTime($this->file));
           #$endTime = new DateTime($object->getEndDate($file).$object->getEndTime($file));
           $curTime = new DateTime(date('m/d/Y h:i:s ', time()));
+
+	  echo $curTime->format("Y-m-d %H%i%s");
 
           $interval = $curTime->diff($startTime);
 
